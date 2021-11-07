@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="https://www.thymeleaf.org" lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Listar Profesiones</title>
+        <link rel="stylesheet" type="text/css" href="static/css/main.css" th:href="@{/css/main.css}">
+    </head>
+    <body>
+        <div class="contenedor">
+            <h1>LISTAR PROFESION</h1>
+            <div th:if="${profesion != null and !profesion.empty}">
+                <div class="botones">
+                <table border="1" class="tablita">
+                    <tr>
+                        <th>Id profesion</th>
+                        <th>Descripcion</th>
+                    
+                    </tr>
+                    <tr th:each="profesion : ${profesion}">
+                        <td th:text="${profesion.ID_PROFESION}"></td>
+                        <td th:text="${profesion.DESCRIPCION_PROFESION}"></td>
+                        <td><a th:href="@{/editarpro/}+${profesion.ID_PROFESION}" th:text="Editar"/>
+                 <td><a th:href="@{/eliminarpro/}+${profesion.ID_PROFESION}" th:text="Eliminar"/>
+                        
+                    </tr>
+                </table>
+                <br/>
+                <br/>
+            </div>
+            </div>
+             <div class="botones">
+            <div th:if ="${profesion == null or profesion.empty}">
+                no hay 
+            </div>
+           <a th:href="@{/op}">Regresar</a>
+        </div>
+        </div>
+    </body>
+</html>

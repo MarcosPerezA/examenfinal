@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Datos de la persona</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style="background-color: beige">
+        
+        
+    <center>
+        
+        <h1> INGRESO DE DATOS AL USUARIO</h1>
+        <br/>
+        <form th:action="@{/guardar}" method="post" th:object="${usuarios}">
+            <br/>
+            
+            <label for="ID_USUARIO">ID_USUARIO:</label> 
+            <BR/>
+            <input type="text" name="ID_USUARIO" th:field="*{ID_USUARIO}"/>
+            <br/>
+            <label for="ID_DEPTO">ID_DEPTO:</label>
+            <br/>
+            <input type="text" name="ID_DEPTO" th:field="*{ID_DEPTO}"/>
+            <br/>
+            <label for="ID_PROFESION">ID_PROFESION:</label>
+            <br/>
+            <input type="text" name="ID_PROFESION" th:field="*{ID_PROFESION}"/>
+            <br/>
+            <label for="NOMBRE">Nombre:</label>
+            <br/>
+            <input type="text" name="NOMBRE" th:field="*{NOMBRE}"/>
+            <br/>
+            <label for="APELLIDO">Apellido:</label>
+            <br/>
+            <input type="text" name="APELLIDO" th:field="*{APELLIDO}"/>
+            <br/>
+            <label for="CORREO_ELECTRONICO">Email:</label>
+            <br/>
+            <input type="email" name="email" th:field="*{CORREO_ELECTRONICO}"/>
+            <br/>
+            <label for="FECHA_NACIMIENTO">FECHA NACIMIENTO</label>
+            <br/>
+            <input type="date" name="FECHA_NACIMIENTO" th:field="*{FECHA_NACIMIENTO}"/>
+            <br/>
+            <label for="LATITUD">LATITUD:</label>
+            <br/>
+            <input type="text" name="LATITUD" th:field="*{LATITUD}"/>
+            <br/>
+            <label for="LONGITUD">longittud</label>
+            <br/>
+            <input type="text" name="LONGITUD" th:field="*{LONGITUD}"/>
+            <br/>
+            <label for="FECHA_REGISTRO">fecha registro</label>
+            <br/>
+            <input type="text" name="FECHA_REGISTRO" th:field="*{FECHA_REGISTRO}"/>
+            <br/>
+            <label for="TELEFONO">TELEFONO</label>
+            <br/>
+            <input type="text" name="TELEFONO" th:field="*{TELEFONO}"/>
+            <br/>
+            <input type="submit" name="guardar" value="Guardar" style="border-color: black"/>
+        </form>
+         <a th:href="@{/op}">Regresar</a>
+         </center>
+    </body>
+</html>
